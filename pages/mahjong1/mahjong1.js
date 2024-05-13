@@ -1,6 +1,6 @@
 // pages/yourPage/yourPage.js
 const app = getApp();
-const alipaySdk = require('./alipay-sdk'); // 假设你已经在项目中引入了支付宝SDK模块
+const alipaySdk = require('alipay-sdk'); // 假设你已经在项目中引入了支付宝SDK模块
 
 Page({
   data: {
