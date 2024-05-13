@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mahjong1/mahjong1",
+    "pages/mahjong2/mahjong2",
+    "pages/mahjong3/mahjong3",
+    "pages/mahjong4/mahjong4",
+    "pages/mahjong5/mahjong5",
+    "pages/mahjong6/mahjong6"
+  ],
+  "window": {
+    "defaultTitle": "逸生活"
+  },
+  "behavior": {
+    "requestReferrerStrategy": "page",
+    "requestReferrerStyle": "full",
+    "requestDefaultEnableCookie": true,
+    "connectSocketDefaultMultiple": true
+  }
+}

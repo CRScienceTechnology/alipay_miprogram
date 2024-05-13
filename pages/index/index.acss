@@ -1,0 +1,38 @@
+/* 在acss样式表文件中 */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;  /*从上往下默认是以x轴从左往右的，这个可以改成从y轴*/
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center; 
+  
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.number-button {
+   /* 将 flex 更改为 'flex-basis' 的形式，并确保每个按钮加上间距后占据25%宽度 */
+  /* display: flex; 不需要设置为 flex，因为 button 默认就是行内元素 */
+
+  /* 删除 flex 属性 */
+  /* flex: 0 0 calc(25% - 20px); */
+
+  /* 设置宽度和高度 */
+  width: calc(40% - 20px); /* 根据实际情况调整基数（这里是100px）和间距（这里是20px） */
+  height: calc(50% - 20px);/*调整二处可以改变一行自动显示的数量以及大小*/
+
+  /* 其他样式保持不变 */
+  justify-content: center; /* 水平居中内容 */
+  align-items: center; /* 垂直居中内容 */
+  border-radius: 9px;
+  margin: 10px;
+  box-sizing: border-box;
+  background-color: rgba(114, 190, 180, 0.137);
+  color: rgb(0, 0, 0);
+}

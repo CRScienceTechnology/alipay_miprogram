@@ -1,0 +1,12 @@
+<!-- 在axml页面文件中 -->
+<view class="container">
+
+  <view class="row">
+    <button class="number-button"data-page="pages/mahjong1/mahjong1" onTap="handleButtonClick1">1</button>
+    <button class="number-button"data-page="pages/mahjong2/mahjong2" onTap="handleButtonClick1">2</button>
+    <button class="number-button"data-page="pages/mahjong3/mahjong3" onTap="handleButtonClick1">3</button>
+    <button class="number-button"data-page="pages/mahjong4/mahjong4" onTap="handleButtonClick1">4</button>
+    <button class="number-button"data-page="" onTap="handleButtonClick1">5</button>
+    <button class="number-button"data-page="" onTap="handleButtonClick1">6</button>
+  </view>
+</view>
