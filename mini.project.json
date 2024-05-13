@@ -1,7 +1,17 @@
 {
-  "enableAppxNg": true,
-  "enableHMR": true,
-  "component2": false,
-  "developOptionsSkipTranspile": false
-  
+  "format": 2,
+  "developOptions": {
+    "hotReload": true,
+    "skipTranspile": false
+  },
+  "compileOptions": {
+    "component2": true,
+    "transpile": {
+      "script": {
+        "ignore": [
+          "node_modules/**"
+        ]
+      }
+    }
+  }
 }

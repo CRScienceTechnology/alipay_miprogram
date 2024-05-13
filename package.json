@@ -1,7 +1,6 @@
 {
-  "devDependencies": 
-  {
-
-    "alipay-sdk": "^3.6.1"
+  "devDependencies": {
+    "alipay-sdk": "^3.6.1",
+    "dns": "^0.2.2"
   }
 }

@@ -7,7 +7,8 @@ Page({
     paymentAmount: 0, // 初始化存储待支付金额
   },
 
-  onLoad() {
+  onLoad()
+  {
     // 页面加载时的初始化操作
   },
 
