@@ -33,7 +33,8 @@ Page({
       };
 
       // 调用支付宝支付接口发起支付请求
-      alipaySdk.pay(orderInfo).then(res => {
+      alipaySdk.pay(orderInfo).then(res => 
+        {
         // 成功调起支付宝收银台
         if (res.resultCode === '9000') {
           // 用户在支付宝客户端确认支付成功后，支付宝服务器会异步通知你的服务器，这里仅展示调起收银台的过程
