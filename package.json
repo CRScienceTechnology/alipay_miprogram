@@ -1,5 +1,7 @@
 {
-  "devDependencies": {
+  "devDependencies": 
+  {
+
     "alipay-sdk": "^3.6.1"
   }
 }

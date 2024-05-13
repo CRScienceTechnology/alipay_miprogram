@@ -20,7 +20,7 @@ Page({
 
   // 点击支付按钮时调起支付宝支付
   onTapPayButton() {
-    const { paymentAmount } = this.data;
+    const { paymentAmount }  = this.data;
     
     if (paymentAmount > 0) 
     {
