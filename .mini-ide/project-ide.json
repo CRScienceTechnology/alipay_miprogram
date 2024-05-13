@@ -1,4 +1,5 @@
 {
   "ignoreHttpDomainCheck": true,
-  "ignoreWebViewDomainCheck": true
+  "ignoreWebViewDomainCheck": true,
+  "enableIssuesAutoWrap": true
 }
