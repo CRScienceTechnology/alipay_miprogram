@@ -2,5 +2,5 @@
   "ignoreHttpDomainCheck": true,
   "ignoreWebViewDomainCheck": true,
   "enableIssuesAutoWrap": true,
-  "ignoreCertificateDomainCheck": true
+  "ignoreCertificateDomainCheck": false
 }

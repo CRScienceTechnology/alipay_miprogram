@@ -2,7 +2,14 @@
   "format": 2,
   "developOptions": {
     "hotReload": true,
-    "skipTranspile": false
+    "skipTranspile": true,
+    "sourcemap": {
+      "ignoreInputMaps": true,
+      "columns": false,
+      "ignore": [
+        "**/node_modules/**"
+      ]
+    }
   },
   "compileOptions": {
     "component2": true,
@@ -12,6 +19,7 @@
           "node_modules/**"
         ]
       }
-    }
+    },
+    "globalObjectMode": "enable"
   }
 }
