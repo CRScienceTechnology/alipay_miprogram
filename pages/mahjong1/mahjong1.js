@@ -22,7 +22,8 @@ Page({
   onTapPayButton() {
     const { paymentAmount } = this.data;
     
-    if (paymentAmount > 0) {
+    if (paymentAmount > 0) 
+    {
       // 构造支付宝支付所需参数（这里仅为示例，实际参数应从服务器获取或根据业务逻辑生成）
       const orderInfo = {
         subject: '商品名称',
