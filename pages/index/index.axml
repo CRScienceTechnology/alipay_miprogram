@@ -9,4 +9,5 @@
     <button class="number-button"data-page="" onTap="handleButtonClick1">5</button>
     <button class="number-button"data-page="" onTap="handleButtonClick1">6</button>
   </view>
+  
 </view>

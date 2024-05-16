@@ -44,16 +44,18 @@ Page({
       path: '/pages/index/index',
     };
   },
+  onGetAuthCode(){
+    my.getAuthCode({
+      scopes: [auth_base],
+      success: (res) => {
+        const authcode=res.authcode;
+        
+      },
+      fail: (err) => {
+        console.log('my.getAuthCode调用失败', err);
+        
+      }
+    });
+  }
 
-  handleButtonClick1(event) {
-    const targetPage = event.currentTarget.dataset.page;  //
-    
-    if (typeof targetPage === 'string' && targetPage.length > 0) {
-      my.navigateTo({ // 使用支付宝小程序API进行页面跳转
-        url: `/${targetPage}`,
-      });
-    } else {
-      console.error('Invalid target page specified.');
-    }
-  },
 });

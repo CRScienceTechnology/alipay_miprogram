@@ -21,36 +21,33 @@ Page({
     const { paymentAmount } = this.data;
 
     if (paymentAmount > 0) {
-      // 构造支付宝支付所需参数（这些参数通常需要从后端服务器获取，确保安全性和时效性）
+      // 实际开发中，这里的orderInfo应由后端服务器生成并返回给前端，包括prepay_id等必要信息
       const orderInfo = {
-        tradeNo: '商户订单号', // 由商户后台生成的订单号
-        // totalAmount 和 subject 应该从服务器动态获取
-        totalAmount: this.data.paymentAmount.toFixed(2), // 将金额转换为两位小数的字符串
-        subject: '商品名称', // 商品简单描述
+        tradeNo: '此处应替换为真实的商户订单号', // 必须从后端获取
+        totalAmount: paymentAmount.toFixed(2), // 保持与原逻辑一致，但实际应为从后端获取的字符串形式的金额
+        subject: '商品名称', // 同样需要确保是从后端获取的真实商品描述
       };
 
-      // 调用支付宝小程序内置的tradePay接口发起支付请求
+      // 调用支付宝小程序的my.tradePay接口发起支付请求
       my.tradePay({
         tradeNo: orderInfo.tradeNo,
-        totalAmount: parseFloat(orderInfo.totalAmount), // 注意totalAmount应该为Number类型
+        totalAmount: parseFloat(orderInfo.totalAmount), // 确保金额格式正确
         subject: orderInfo.subject,
       }).then((result) => {
         if (result.resultCode === '9000') {
           // 支付成功
           console.log('支付成功');
-          // 这里可以添加支付成功的后续处理逻辑
+          // 进行支付成功的业务逻辑处理
         } else {
           console.error('支付失败，错误码：', result.resultCode);
-          // 根据不同错误码处理相应逻辑
+          // 根据错误码处理失败逻辑
         }
       }).catch((error) => {
         console.error('调用支付接口失败：', error);
-        // 处理异常情况
+        // 异常处理
       });
     } else {
       console.warn('未设置或获取到有效的支付金额');
     }
   },
 });
-
-//实现调用支付宝接口

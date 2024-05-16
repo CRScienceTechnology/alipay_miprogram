@@ -1,0 +1,12 @@
+.amountButton{
+  font-weight: 100;
+  display: flex;
+  width: auto;
+  height: auto;
+}
+.payButton{
+  font-weight: 100;
+  display: flex;
+  width: auto;
+  height: auto;
+}
