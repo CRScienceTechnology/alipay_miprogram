@@ -44,11 +44,12 @@ Page({
       path: '/pages/index/index',
     };
   },
+  
   onGetAuthCode(){
     my.getAuthCode({
-      scopes: [auth_base],
+      scopes: [auth_base], // 静默授权，从支付宝服务器后端获取openid
       success: (res) => {
-        const authcode=res.authcode;
+        const authcode=res.authcode; // 获取到授权码，使用authCode暂存，为随后传入到开发者服务器后端将authcode转为usr_id处理做准备
         
       },
       fail: (err) => {
@@ -56,6 +57,16 @@ Page({
         
       }
     });
-  }
-
+  },
+  handleButtonClick1(event) {
+    const targetPage = event.currentTarget.dataset.page;  //
+    
+    if (typeof targetPage === 'string' && targetPage.length > 0) {
+      my.navigateTo({ // 使用支付宝小程序API进行页面跳转
+        url: `/${targetPage}`,
+      });
+    } else {
+      console.error('Invalid target page specified.');
+    }
+  },
 });
