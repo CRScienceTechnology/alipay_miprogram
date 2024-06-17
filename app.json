@@ -17,5 +17,5 @@
     "requestDefaultEnableCookie": true,
     "connectSocketDefaultMultiple": true
   },
-  "useDynamicPlugins": false
+  "useDynamicPlugins": true
 }

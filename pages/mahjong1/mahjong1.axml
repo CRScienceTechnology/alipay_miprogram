@@ -1,5 +1,5 @@
 <view>
-  <button id="amountButton" data-amount="3.00" bindtap="onTapAmountButton">1小时 3元</button>
+  <button id="amountButton" data-amount="3.00" onTap="onTapAmountButton">1小时 3元</button>
   <!-- ... 其他页面内容 -->
-  <button id="payButton" bindtap="onTapPayButton">2小时 5元</button>
+  <button id="payButton" onTap="onTapPayButton">2小时 5元</button>
 </view>
