@@ -46,10 +46,16 @@ Page({                // pages/yourPage/yourPage.js
                 // 传入支付宝交易号trade_no
                 tradeNO: tradeNo,
                 success: (res) => {
-                  my.alert({
-                    content: JSON.stringify(res),  //付款成功的程序执行逻辑
-                    
-                  });
+                  if(res.result.includes("&success=\"true\""))
+                  {
+                      my.alert({ 
+                      content: "支付成功",  //付款成功的程序执行逻辑
+                      });
+                      my.request() //实现传入emqx服务器时间变量
+                  }else{
+                    my.alert({content:"支付失败"});
+                  }
+             
                 },
                 fail: (res) => {
                   my.alert({
