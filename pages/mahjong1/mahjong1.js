@@ -30,7 +30,7 @@ Page({                // pages/yourPage/yourPage.js
       //构造发送给emqx后端的参数
       const emqx={
         "mahjong_code":1,
-        "statu":"on",
+        "status":"on",
         "time_working":3
       }
       my.request({
@@ -41,29 +41,20 @@ Page({                // pages/yourPage/yourPage.js
         success: function(res) {
               my.tradePay({
               tradeNO: res.data.tradeNo,
-                success: (res) => {
+              success: (res) => {
                 if (res.result.includes("&success=\"true\"")){
                   //支付成功的话
-                  my.alert({
-                    content: "支付成功"
-                  });
-                }else{
-                  my.alert({
-                    content: "支付失败"
-                  });
+                  my.alert({content: "支付成功"});
+                  //下面单独写了一个函数执行测试(因为暂时没法付款), 按"测试mqtt"按钮触发
                   my.request({
-                    url:"https://xie.wjwcj.cn/api/emqx_analysis:3001",
+                    url:"https://xie.wjwcj.cn/api_mqtt/emqx_analysis",
                     method:'POST',
                     data:emqx,
                     dataType:'json',
-                   });
-                }
+                  });
+                }else{my.alert({content: "支付失败"});}
               },
-              fail: (res) => {
-                  my.alert({
-                    content: "获取订单失败",
-              });
-        },
+              fail: (res) => {my.alert({content: "获取订单失败"});},
               complete: (res) => {}
             });
           },
@@ -85,6 +76,21 @@ Page({                // pages/yourPage/yourPage.js
         });
     
   },
+  mqtt: function(){
+    //构造发送给emqx后端的参数
+    const emqx={
+      "mahjong_code":1,
+      "status":"on",
+      "time_on":3
+    }//服务器写的time_on， 你写了个time_working..(改了)
+    my.request({
+      url:"https://xie.wjwcj.cn/api_mqtt/emqx_analysis",
+      method:'POST',
+      data:emqx,
+      dataType:'json',
+    });
+    console.log("已请求开机")
+  }
   
   
 
