@@ -1,3 +1,13 @@
+.price-choose-view{
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+.tip-text{
+  position: absolute;
+  top: 20%;
+  left: 30%;
+}
 .amountButton{
   font-weight: 100;
   display: flex;

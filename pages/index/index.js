@@ -9,10 +9,9 @@ Page({
           scopes: ['auth_base'], // 确保auth_base是一个字符串，静默授权，从支付宝服务器后端获取openid
           success: (res) => {
               authcode = res.authCode; // 获取到授权码，应该是res.authCode，使用authCode暂存，为随后传入到开发者服务器后端将authcode转为usr_id处理做准备
-              console.log('获取到的授权码:', authcode);
           },
           fail: (err) => {
-              console.log('my.getAuthCode调用失败', err);
+              console.log('登陆失败', err);
           }
       });
   },  
@@ -24,7 +23,6 @@ Page({
 
   onReady() {
     // 页面加载完成
-   console.log('ready')
 
   },
 
@@ -57,28 +55,15 @@ Page({
   onShareAppMessage() {
     // 返回自定义分享信息
     return {
-      title: '我的小程序',
+      title: '逸麻将',
       path: '/pages/index/index',
     };
   },
 
-  
-  handleButtonClick1(event)
-   {
-    const targetPage = event.currentTarget.dataset.page;  //
-    
-    if (typeof targetPage === 'string' && targetPage.length > 0) 
-    {
-
-        my.navigateTo({ // 使用支付宝小程序API进行页面跳转
-        url: `/${targetPage}?Authcode=${authcode}`,//携带Authcode变量进行跳转
-        });
-
-    } 
-    else 
-    {
-      console.error('Invalid target page specified.');
-    }
-  },
+  turn_to_page(e){
+    my.navigateTo({
+      url: "/pages/mahjong/mahjong?id=" + e.target.dataset.id + "&Authcode=" + authcode
+    });
+  }
 });
 

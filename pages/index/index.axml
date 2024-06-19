@@ -2,13 +2,12 @@
 <view class="container">
 
   <view class="row">
-    <button class="number-button"data-page="pages/mahjong1/mahjong1" onTap="handleButtonClick1">1</button>
-    <!--点击按钮会触发js代码中的handleButtonClick1函数块 -->
-    <button class="number-button"data-page="pages/mahjong2/mahjong2" onTap="handleButtonClick1">2</button>
-    <button class="number-button"data-page="pages/mahjong3/mahjong3" onTap="handleButtonClick1">3</button>
-    <button class="number-button"data-page="pages/mahjong4/mahjong4" onTap="handleButtonClick1">4</button>
-    <button class="number-button"data-page="" onTap="handleButtonClick1">5</button>
-    <button class="number-button"data-page="" onTap="handleButtonClick1">6</button>
+    <button class="number-button" data-id="1" onTap="turn_to_page">壹</button>
+    <button class="number-button" data-id="2" onTap="turn_to_page">贰</button>
+    <button class="number-button" data-id="3" onTap="turn_to_page">叁</button>
+    <button class="number-button" data-id="4" onTap="turn_to_page">肆</button>
+    <button class="number-button" data-id="5" onTap="turn_to_page">伍</button>
+    <button class="number-button" data-id="6" onTap="turn_to_page">陆</button>
   </view>
   
 </view>
