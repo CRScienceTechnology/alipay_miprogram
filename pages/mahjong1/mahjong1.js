@@ -27,6 +27,11 @@ Page({                // pages/yourPage/yourPage.js
           "description": '麻将机运行',
           "authCode": authCode,
       };
+      const emqx={
+        "mahjong_code":1,
+        "statu":"on",
+        "time_working":3
+      }
       my.request({
           url: 'https://xie.wjwcj.cn/api/create-order',
         method: 'POST',
@@ -45,6 +50,12 @@ Page({                // pages/yourPage/yourPage.js
                   my.alert({
                     content: "支付失败"
                   });
+                  my.request({
+                    url:"https://xie.wjwcj.cn/api/emqx_analysis",
+                    method:'POST',
+                    data:emqx,
+                    dataType:'json',
+                   });
                 }
               },
               fail: (res) => {
