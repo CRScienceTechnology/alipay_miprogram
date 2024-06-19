@@ -27,6 +27,7 @@ Page({                // pages/yourPage/yourPage.js
           "description": '麻将机运行',
           "authCode": authCode,
       };
+      //构造发送给emqx后端的参数
       const emqx={
         "mahjong_code":1,
         "statu":"on",
@@ -51,7 +52,7 @@ Page({                // pages/yourPage/yourPage.js
                     content: "支付失败"
                   });
                   my.request({
-                    url:"https://xie.wjwcj.cn/api/emqx_analysis",
+                    url:"https://xie.wjwcj.cn/api/emqx_analysis:3001",
                     method:'POST',
                     data:emqx,
                     dataType:'json',
