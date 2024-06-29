@@ -9,7 +9,7 @@ Page({                // pages/yourPage/yourPage.js
 
   onLoad: function(options) {
     this.setData({table_id: options["id"]})
-    console.log(options["Authcode"]); // 输出传递的Authcode值
+    console.log(options["Authcode"]);     // 输出传递的Authcode值
   },
   
   onTapAmountButton: function(event) {
@@ -31,15 +31,15 @@ Page({                // pages/yourPage/yourPage.js
     }
     my.request({
         url: 'https://xie.wjwcj.cn/api/create-order',
-      method: 'POST',
+        method: 'POST',
         data:sendData,
-      dataType: 'json',
-      success: function(res) {
+        dataType: 'json',
+        success: function(res) {
             my.tradePay({
             tradeNO: res.data.tradeNo,
             success: (res) => {
               if (res.result.includes("&success=\"true\"")){
-                //支付成功的话
+                //调用回调方法includes检测result中success的值是否为true来判断是否成功
                 my.alert({content: "支付成功"});
                 //下面单独写了一个函数执行测试(因为暂时没法付款), 按"测试mqtt"按钮触发
                 my.request({
@@ -89,9 +89,6 @@ Page({                // pages/yourPage/yourPage.js
     });
     console.log("已请求开机")
   }
-  
-  
-
 });
 
 

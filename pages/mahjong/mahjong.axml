@@ -3,6 +3,6 @@
 
   <button id="amountButton" data-amount="3.00" onTap="onTapAmountButton">1小时 3元</button>
   <!-- ... 其他页面内容 -->
-  <button id="payButton" data-amount="5.00" onTap="onTapAmountButton">2小时 5元</button>
+  <button id="payButton" data-amount="5.00" onTap="onTapAmountButton2">2小时 5元</button>
   <button onTap="mqtt">测试mqtt</button>
 </view>
